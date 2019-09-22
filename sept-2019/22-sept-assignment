@@ -4,50 +4,40 @@
 
 void main()
 {
-    char s[20];
-    int i,j,count,k;
-    printf("Enter a string");
-    scanf("%s",s);
-    k=strlen(s);
-while(1)
-{    
-for(i=0;i<=k;i++)
+    char s1[20],s2[20];
+    scanf("%s%s",s1,s2);
+    char t;
+    int i,j,l1,l2;
+    l1=strlen(s1);
+    l2=strlen(s2);
+    if(l1!=@)
+    printf("not");
+    for(i=o;i<l1;i++)
     {
-        count=0;
-        if(s[i]!='\0')
-        {
-            for(j=0;i<=k;j++)
-            {
-                if(s[i]==s[j])
-                {
-                    count++;
-                    s[j]='\0';
-                }
-            }
-            printf("freq of %c is %d",s[i],count);
-    	}
-    }
- printf("Enter another string");
-    scanf("%a",s);
-    k=strlen(a);
-    for(i=0;i<=k;i++)
+    for(j=i+1;j<l1;j++)
     {
-        count=0;
-        if(a[i]!='\0')
-        {
-            for(j=0;i<=k;j++)
-            {
-                if(a[i]==s[j])
-                {
-                    count++;
-                    a[j]='\0';
-                }
-            }
-            printf("freq of %c is %d",s[i],count);
-    
-        }
+    if(s1[i]>s1[j])
+    {
+    t=s1[i];
+    s1[i]=s1[j];
+    s1[j]=t;
     }
-
-
-    
-}
+    if(s2[i]>s2[j])
+    {
+    t=s2[i];
+    s2[i]=s2[j];
+    s2[j]=t;
+    }
+    }
+    }
+    for(i=0;i<l1;i++)
+    {
+    if(s1[i]!=s2[i])
+    {
+    printf("not anagrams");
+    return 0;
+    }
+    }
+    printf("anagrams");
+    return 0;
+    }
